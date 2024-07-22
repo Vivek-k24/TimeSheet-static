@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* Custom Styles */
+body {
+  font-family: Arial, sans-serif; /* Set site font to Arial */
+}
+
+.header {
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure header is on top */
+  display: flex;
+  justify-content: space-between; /* Ensure space between elements */
+  align-items: center;
+}
+
+.breadcrumb-header {
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Ensure breadcrumb is below header */
+  top: 70px; /* Space for fixed header */
+  left: 250px; /* Ensure it aligns with the sidebar */
+  position: fixed;
+  width: calc(100% - 250px); /* Adjust width to fill remaining space */
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 70px; /* Adjust top to align below the main header */
+  left: 0;
+  height: calc(100% - 70px); /* Ensure it doesn't overlap with the header */
+  background: #343a40;
+  padding-top: 20px; /* Leave a space of 20px */
+}
+
+.sidebar .nav-link {
+  color: #fff;
+  font-size: 18px; 
+  padding: 10px 20px;
+}
+
+.sidebar .nav-link:hover {
+  background: #495057;
+}
+
+.card-header {
+  background-color: #8d0000; 
+  color: #fff;
+}
+
+.breadcrumb {
+  background-color: #fff;
+  margin-bottom: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #8d0000;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 20px;
+  margin-top: 140px; 
+}
+
+.content-wrapper {
+  margin-left: 250px;
+}

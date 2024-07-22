@@ -1,0 +1,71 @@
+<div class="container mt-4">
+    <h2>Daily Time Sheet</h2>
+    <div class="card mt-3">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span>Daily Time Sheet</span>
+        <div class="mx-auto text-center">
+          <i class="bi bi-chevron-left" (click)="changeDate(-1)"></i>
+          <span>{{ currentDate | date: 'MMM d, y' }}</span>
+          <i class="bi bi-chevron-right" (click)="changeDate(1)"></i>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of rows; let i = index">
+              <td>
+                <select class="form-select" [(ngModel)]="row.project">
+                  <option>Select Project</option>
+                  <option>US - CSM</option>
+                </select>
+                <select class="form-select mt-2" [(ngModel)]="row.task">
+                  <option>Select Task</option>
+                  <option>Task 1</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" class="form-control" [(ngModel)]="row.title" placeholder="Enter title">
+              </td>
+              <td>
+                <input type="text" class="form-control" [(ngModel)]="row.description" placeholder="Enter description">
+              </td>
+              <td>
+                <input type="time" class="form-control" [(ngModel)]="row.startTime">
+              </td>
+              <td>
+                <input type="time" class="form-control" [(ngModel)]="row.endTime">
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="removeRow(i)"><i class="bi bi-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <button class="btn btn-primary" (click)="addRow()"><i class="bi bi-plus"></i> Add Row</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mb-3">
+          <label>Attach Document:</label>
+          <input type="file" class="form-control">
+        </div>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-warning" (click)="save()"><i class="bi bi-save"></i> Save</button>
+          <button class="btn btn-secondary" (click)="reset()"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+          <button class="btn btn-success"><i class="bi bi-check-circle"></i> Submit for Approval</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

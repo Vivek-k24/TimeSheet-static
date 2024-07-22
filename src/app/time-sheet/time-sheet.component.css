@@ -1,0 +1,23 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .card-header div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-header div i {
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .table {
+    margin-bottom: 20px;
+  }
+  
+  .d-flex.justify-content-between button {
+    margin: 5px;
+  }
+  
